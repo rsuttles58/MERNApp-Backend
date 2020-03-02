@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 //routes established in the placesRoutes middleware are accessible now.
 //the first argument 'api/places' says that it will only route requests to placesRoutes if it begins with api/places
 app.use('/api/places', placesRoutes);
+app.use('/api/users', usersRoutes);
 
 app.use((req,res,next) => {
     const error = new HttpError('Count not find this route.', 404);
